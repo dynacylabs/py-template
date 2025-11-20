@@ -266,7 +266,7 @@ coverage xml
 
 ### Coverage Goals
 
-- **Overall**: 90%+ coverage
+- **Overall**: 95%+ coverage
 - **New Code**: 100% coverage
 - **Critical Paths**: 100% coverage
 
@@ -277,7 +277,7 @@ coverage xml
 pytest --cov=myproject --cov-report=term-missing
 
 # Fail if coverage below threshold
-pytest --cov=myproject --cov-report=term --cov-fail-under=90
+pytest --cov=app --cov-report=term --cov-fail-under=95
 ```
 
 ## Development Workflow

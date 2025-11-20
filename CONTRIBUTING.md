@@ -281,7 +281,7 @@ pytest tests/test_client.py -v
 
 ### Test Coverage
 
-- Aim for 90%+ code coverage
+- Aim for 95%+ code coverage
 - 100% coverage for new features
 - Tests should be meaningful, not just for coverage
 

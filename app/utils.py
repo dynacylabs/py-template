@@ -42,7 +42,12 @@ def validate_email(email: str) -> bool:
         >>> validate_email("invalid-email")
         False
     """
-    return '@' in email and '.' in email.split('@')[-1]
+    if not email or '@' not in email:
+        return False
+    parts = email.split('@')
+    if len(parts) != 2 or not parts[0] or not parts[1]:
+        return False
+    return '.' in parts[1]
 
 
 def chunk_list(items: List[Any], chunk_size: int) -> List[List[Any]]:
