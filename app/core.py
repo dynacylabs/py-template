@@ -2,7 +2,7 @@
 Core functionality module.
 """
 
-from typing import Optional
+from typing import List, Optional
 
 
 class HelloWorld:
@@ -37,7 +37,7 @@ class HelloWorld:
         """
         return f"{self.greeting}, {self.name}!"
     
-    def greet_multiple(self, names: list[str]) -> list[str]:
+    def greet_multiple(self, names: List[str]) -> List[str]:
         """
         Generate greetings for multiple names.
         
