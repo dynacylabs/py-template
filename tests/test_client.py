@@ -95,6 +95,21 @@ class TestClientGet:
             client.get("/error")
         
         assert "HTTP error" in str(exc_info.value)
+    
+    @responses_lib.activate
+    def test_get_bad_request(self, client):
+        """Test GET request returning 400."""
+        responses_lib.add(
+            responses_lib.GET,
+            f"{client.base_url}/bad",
+            json={"error": "Bad request"},
+            status=400
+        )
+        
+        with pytest.raises(NetworkError) as exc_info:
+            client.get("/bad")
+        
+        assert "HTTP error" in str(exc_info.value)
 
 
 @pytest.mark.unit

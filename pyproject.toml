@@ -72,6 +72,11 @@ disallow_untyped_defs = false
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-v --cov=app --cov-report=term-missing --strict-markers --tb=short"
+
+[tool.coverage.run]
+omit = [
+    "app/_version.py",
+]
 markers = [
     "unit: Unit tests with mocked dependencies",
     "integration: Integration tests that hit real external services",
